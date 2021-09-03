@@ -42,3 +42,23 @@ def display_sum():
     print("The sum for lower diagonal elements is: " + str(sum_lower_diagonal_elements))
 
 display_sum()
+
+#create the test matrixes
+A = np.array([[0,2],
+             [2,3]])
+x0 = np.array([1,1])
+
+#function to perform power method
+def Power_method(A,x0, n):
+    for i in range(n):
+        x0 =np.dot(A,x0)
+        eigenvalue = max(abs(x0))
+        x0 = x0/eigenvalue
+        eigenvector = x0
+    return eigenvalue,eigenvector
+
+n = 8
+
+#display eigenvalue and eigenvector
+print("eigenvalue: ", Power_method(A,x0,n)[0])
+print("eigenvector: ", Power_method(A,x0,n)[1])
