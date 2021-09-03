@@ -62,3 +62,14 @@ n = 8
 #display eigenvalue and eigenvector
 print("eigenvalue: ", Power_method(A,x0,n)[0])
 print("eigenvector: ", Power_method(A,x0,n)[1])
+
+n = 123
+iteration = 10
+
+#create a varaible to store number of iterations and declare x0 matrix
+x0 = np.ones((n))
+H = Hilbert(n)
+
+#print eigenvalue and eigenvector
+print("EigenValue: ", Power_method(H,x0,iteration)[0])
+print("Eigenvector: ", Power_method(H,x0,iteration)[1])
